@@ -16,12 +16,15 @@ Three methods of prefetching would be used and compared in this project:
   - [Wrong path prefetching](#wrong_path_prefetching)
   
 ### Benchmarks
-[FindPi.c] and [Barnes.c] would be used as benchmarking programs to test the instruction cache misses on the the prefecthing algorithms. FindPi.c computes the value by using the Monte-Carlo algorithm and Barnes.c uses the Barnes-Hut methods to simulate the interaction of a system of bodies in astronomy.
+[FindPi.c](https://github.com/amandazhuyilan/Huntington-Ave-icache/blob/master/FindPi.c) and [Barnes.c](https://github.com/amandazhuyilan/Huntington-Ave-icache/blob/master/Barnes.c) would be used as benchmarking programs to test the instruction cache misses on the the prefecthing algorithms. FindPi.c computes the value by using the Monte-Carlo algorithm and Barnes.c uses the Barnes-Hut methods to simulate the interaction of a system of bodies in astronomy.
 
 ### Pin
-Thanks to the perfect [documentation](https://software.intel.com/en-us/articles/pin-a-dynamic-binary-instrumentation-tool) that came with Intel's Pin,a dynamic binary instrumentation tool, it did not take me long to figure out the two main componenets in icache: instrumentation and analysis. 
+Thanks to the perfect [documentation](https://software.intel.com/en-us/articles/pin-a-dynamic-binary-instrumentation-tool) that came with Intel's Pin, a dynamic binary instrumentation tool, it did not take me long to figure out the two main componenets in icache: instrumentation and analysis. 
 
-Instrumentation decides where and what code is inserted at the location,it would be called to evaluate the properties of the code to be presented, while the analysis determines the code to be executed at the insertion point, collects information about the program to be analyzed. Next-line prefetching and target-line prefetching, are implemented in both the analysis and instrumentation routine, while the wrong-path prefetching scheme was implemented using only instrumentation.
+Instrumentation decides where and what code is inserted at the location, it would be called to evaluate the properties of the code to be presented, while the analysis determines the code to be executed at the insertion point, collects information about the program to be analyzed. Next-line prefetching and target-line prefetching, are implemented in both the analysis and instrumentation routine, while the wrong-path prefetching scheme was implemented using only instrumentation.
+
+Pin can be downloaded [here](https://software.intel.com/en-us/articles/pin-a-binary-instrumentation-tool-downloads).
+The original icache.cpp can be downloaded [here](https://github.com/amandazhuyilan/Huntington-Ave-icache/blob/master/icache.cpp) or under pin/source/tools/Memory.
 
 <a name="next_line_prefetching"></a>
 #### Next Line Prefetching 
